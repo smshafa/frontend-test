@@ -8,6 +8,7 @@
     <a *ngIf="currentUser && currentUser.id" routerLink="/my-recipe/{{this.currentUser.id}}">
       <img src="assets/icons/basket.png">
     </a>
+    <label class="quantity-label">{{currentUser ? currentUser.recipe.length : 0 }}</label>
   </div>
   <div>
     <app-recipe-card-view [recipes]="recipes" [removableRecipes]="false" [insertableRecipes]="true"
