@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { PersonalRecipeComponent } from "./personal-recipe/personal-recipe.component";
 import { RecipeItemComponent } from "./recipe-item/recipe-item.component";
 import {RecipeCardViewComponent} from "./recipe-card-view/recipe-card-view.component";
+import {SharedModuleModule} from "./shared-module/shared-module.module";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {RecipeCardViewComponent} from "./recipe-card-view/recipe-card-view.compo
       {path: '', component: HomeComponent, pathMatch: 'full'},
       {path: 'my-recipe', component: PersonalRecipeComponent},
     ]),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

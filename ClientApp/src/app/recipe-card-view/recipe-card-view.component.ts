@@ -1,7 +1,7 @@
 import {Component, Input, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
-import {IRecipe} from "../models/IRecipe";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Subscription} from "rxjs";
+import {IRecipe} from "../shared-module/models/IRecipe";
 
 @Component({
   selector: 'app-recipe-card-view',

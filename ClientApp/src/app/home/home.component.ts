@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {IRecipe} from "../models/IRecipe";
+import {IRecipe} from "../shared-module/models/IRecipe";
 
 @Component({
   selector: 'app-home',
