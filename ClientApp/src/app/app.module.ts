@@ -26,7 +26,7 @@ import {SharedModuleModule} from "./shared-module/shared-module.module";
     FormsModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent, pathMatch: 'full'},
-      {path: 'my-recipe', component: PersonalRecipeComponent},
+      {path: 'my-recipe/:userId', component: PersonalRecipeComponent},
     ]),
     ReactiveFormsModule,
     SharedModuleModule

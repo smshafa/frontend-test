@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {IRecipe} from "../shared-module/models/IRecipe";
@@ -13,6 +13,9 @@ export class RecipeCardViewComponent implements OnInit, OnDestroy {
   private tempRecipes: IRecipe[] = [];
   public formGroup: FormGroup = this.fb.group({});
   @Input() public recipes: IRecipe[] = [];
+  @Input() public removableRecipes: boolean;
+  @Output() public selectedRecipeEvent= new EventEmitter<IRecipe>();
+  @Output() public removeRecipeEvent = new EventEmitter<IRecipe>();
 
   constructor(private fb: FormBuilder) {
   }
@@ -35,6 +38,14 @@ export class RecipeCardViewComponent implements OnInit, OnDestroy {
         this.recipes = this.tempRecipes;
       }
     });
+  }
+
+  public selectedRecipeCallBack(recipe: IRecipe): void {
+    this.selectedRecipeEvent.emit(recipe);
+  }
+
+  public removeRecipeCallBack(recipe: IRecipe): void {
+    this.removeRecipeEvent.emit(recipe);
   }
 
   public ngOnDestroy(): void {

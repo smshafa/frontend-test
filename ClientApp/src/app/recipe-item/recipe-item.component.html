@@ -5,8 +5,8 @@
     <p class="card-description">{{ recipe?.description }}</p>
     <p class="card-price">{{ recipe?.price }}$</p>
     <div class="card-button-container">
-      <button *ngIf="canRemove" class="card-button">Remove</button>
-      <button class="card-button">Add to Cart</button>
+      <button *ngIf="canRemove" (click)="removeFromCart()" class="card-button">Remove</button>
+      <button class="card-button" (click)="addToCart()">Add to Cart</button>
     </div>
   </div>
 </div>

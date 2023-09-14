@@ -1,1 +1,7 @@
-<p>personal-recipe works!</p>
+<div class="page-container">
+  <div>
+    <app-recipe-card-view [recipes]="recipes" [removableRecipes]="true"
+                          (removeRecipeEvent)="removeRecipeCallBack($event)">
+    </app-recipe-card-view>
+  </div>
+</div>
