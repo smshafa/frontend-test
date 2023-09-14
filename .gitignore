@@ -3,3 +3,5 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+/ClientApp/.angular/cache/15.2.5/angular-webpack/ff02fa6a0af3de4501ea84b0abe8acba339672f7/4.pack
+/ClientApp/.angular/cache/15.2.5/angular-webpack/ff02fa6a0af3de4501ea84b0abe8acba339672f7/5.pack

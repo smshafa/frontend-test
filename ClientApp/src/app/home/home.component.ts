@@ -1,8 +1,22 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {IRecipe} from "../models/IRecipe";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
+  public recipes: IRecipe[] = [];
+  constructor(private http: HttpClient) {
+  }
+
+  public ngOnInit(): void {
+    this.http.get('assets/data/recipe.json').subscribe((data: any) => {
+      this.recipes = data;
+    });
+  }
+
 }
+
+

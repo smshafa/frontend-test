@@ -1,0 +1,12 @@
+<div [formGroup]="formGroup">
+  <div class="container">
+    <div style="margin-bottom: 15px;">
+      <input type="text" formControlName="searchExpression" placeholder="Search..." class="search-input">
+    </div>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let recipe of recipes">
+        <app-recipe-item [recipe]="recipe" [canRemove]="false"></app-recipe-item>
+      </div>
+    </div>
+  </div>
+</div>

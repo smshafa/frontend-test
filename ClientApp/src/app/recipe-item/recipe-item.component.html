@@ -1,0 +1,12 @@
+<div class="card">
+  <img src="assets/data/recipe-images/{{recipe?.image}}.png" alt="Item Image" class="card-image">
+  <div class="card-content">
+    <h5 class="card-title">{{ recipe?.name }}</h5>
+    <p class="card-description">{{ recipe?.description }}</p>
+    <p class="card-price">{{ recipe?.price }}$</p>
+    <div class="card-button-container">
+      <button *ngIf="canRemove" class="card-button">Remove</button>
+      <button class="card-button">Add to Cart</button>
+    </div>
+  </div>
+</div>
