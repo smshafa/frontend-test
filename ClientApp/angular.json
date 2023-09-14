@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "frontend_test"
+  "defaultProject": "frontend_test",
+  "cli": {
+    "analytics": false
+  }
 }
