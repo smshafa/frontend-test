@@ -32,7 +32,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   public onUserChanged(event: any): void {
     if (event && event.selectedOptions.length > 0) {
-      // this.currentUser = this.users.find((u: IUser) => u.id == event.selectedOptions[0].value);
       const userFound = this.userService.findUser(event.selectedOptions[0].value);
       if (userFound) {
         this.userService.setCurrentUser(userFound);
@@ -45,16 +44,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     console.log(recipe);
   }
 
-  public removeRecipeCallBack(recipe: IRecipe): void {
-    const recipeIndex = this.currentUser?.recipe.findIndex((r: IRecipe) => r.name === recipe.name);
-    if (recipeIndex && recipeIndex >= 0) {
-      this.currentUser?.recipe.splice(recipeIndex, 1);
-      console.log(recipe);
-    }
-  }
-
   public ngOnDestroy(): void {
-    this.userSubscription.unsubscribe();
+    if (this.userSubscription) {
+      this.userSubscription.unsubscribe();
+    }
   }
 
 }

@@ -5,14 +5,13 @@
         {{ user.name }}
       </option>
     </select>
-    <a *ngIf="currentUser && currentUser.id" routerLink="/my-recipe/{{this.currentUser?.id}}">
+    <a *ngIf="currentUser && currentUser.id" routerLink="/my-recipe/{{this.currentUser.id}}">
       <img src="assets/icons/basket.png">
     </a>
   </div>
   <div>
-    <app-recipe-card-view [recipes]="recipes" [removableRecipes]="false"
-                          (selectedRecipeEvent)="selectedRecipeCallBack($event)"
-                          (removeRecipeEvent)="removeRecipeCallBack($event)">
+    <app-recipe-card-view [recipes]="recipes" [removableRecipes]="false" [insertableRecipes]="true"
+                          (selectedRecipeEvent)="selectedRecipeCallBack($event)">
     </app-recipe-card-view>
   </div>
 </div>

@@ -14,6 +14,7 @@ export class RecipeCardViewComponent implements OnInit, OnDestroy {
   public formGroup: FormGroup = this.fb.group({});
   @Input() public recipes: IRecipe[] = [];
   @Input() public removableRecipes: boolean;
+  @Input() public insertableRecipes: boolean;
   @Output() public selectedRecipeEvent= new EventEmitter<IRecipe>();
   @Output() public removeRecipeEvent = new EventEmitter<IRecipe>();
 

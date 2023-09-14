@@ -9,6 +9,7 @@ import {IRecipe} from "../shared-module/models/IRecipe";
 export class RecipeItemComponent implements OnInit {
   @Input() public recipe?: IRecipe;
   @Input() public canRemove: boolean;
+  @Input() public canAdd: boolean;
   @Output() public selectedRecipeEvent = new EventEmitter<IRecipe>();
   @Output() public removeRecipeEvent = new EventEmitter<IRecipe>();
   constructor() {

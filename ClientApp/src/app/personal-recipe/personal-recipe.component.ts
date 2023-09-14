@@ -32,11 +32,17 @@ export class PersonalRecipeComponent implements OnInit, OnDestroy {
   }
 
   public removeRecipeCallBack(recipe: IRecipe): void {
-
+    const recipeIndex = this.recipes.findIndex((r: IRecipe) => r.name === recipe.name);
+    if (recipeIndex && recipeIndex >= 0) {
+      this.recipes.splice(recipeIndex, 1);
+      console.log(recipe);
+    }
   }
 
   public ngOnDestroy(): void {
-    this.userSubscription.unsubscribe();
+    if (this.userSubscription) {
+      this.userSubscription.unsubscribe();
+    }
   }
 
 }
