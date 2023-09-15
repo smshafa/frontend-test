@@ -25,6 +25,8 @@
 
 
     <ItemGroup>
+      <Folder Include="ClientApp\src\app\core\guards\" />
+      <Folder Include="ClientApp\src\app\core\handlers\" />
       <Folder Include="ClientApp\src\app\shared-module\components\" />
       <Folder Include="ClientApp\src\app\shared-module\directives\" />
       <Folder Include="ClientApp\src\app\shared-module\interceptors\" />
