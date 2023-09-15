@@ -12,6 +12,7 @@ import {RecipeCardViewComponent} from "./recipe-card-view/recipe-card-view.compo
 import {SharedModule} from "./shared-module/shared.module";
 import {SpinnerInterceptor} from "./shared-module/interceptors/spinner.interceptor";
 import {CoreModule} from "./core/core.module";
+import {RouterTestingModule} from "@angular/router/testing";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {CoreModule} from "./core/core.module";
     ReactiveFormsModule,
     SharedModule,
     CoreModule,
+    RouterTestingModule,
     BrowserModule.withServerTransition({appId: 'ng-cli-universal'}),
     RouterModule.forRoot([
       {path: '', component: HomeComponent, pathMatch: 'full'},
